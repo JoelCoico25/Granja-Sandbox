@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Granja Sandbox - Un juego de simulación de granja">
+    <meta name="keywords" content="granja, sandbox, juego, simulación, html, css, javascript">
+    <meta name="author" content="Joel Lertua">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Joel's Sandbox - Simulador de Granja">
+    <meta property="og:description" content="Cultiva, riega y cosecha en esta granja sandbox interactiva.">
+    <meta property="og:image" content="/assets/images/day_farm.png">
+    <meta property="og:url" content="https://github.com/JoelCoico25/Granja-Sandbox">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Joel's Sandbox">
+
+    <!-- <meta name="theme-color" content="#4CAF50"> no tiene soporte en todos los navegadores-->
+    <title>Joel's Sandbox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- Este sitio web es creado únicamente para ordenadores, por lo cual no tendrá diseño responsivo por el momento.-->
+<!-- Se agregaran mejoras a futuro, tal y como un boton de volumen para la música de fondo.-->
+
+<body>
+    <header>
+        <h1>Joel's Sandbox</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="https://www.instagram.com/j.lertua2019" target="_blank" rel="noopener noreferrer"><img
+                            src="/assets/images/instagram.svg" loading="lazy" class="icon-nav"
+                            title="Enlace al perfil de instagram"></a></li>
+                <li><a href="https://www.facebook.com/joel.lertua.5" target="_blank" rel="noopener noreferrer"><img
+                            src="/assets/images/facebook.svg" loading="lazy" class="icon-nav"
+                            title="Enlace al perfil de facebook"></a>
+                </li>
+                <li><a href="https://www.github.com/JoelCoico25" target="_blank" rel="noopener noreferrer"><img
+                            src="/assets/images/github.svg" loading="lazy" class="icon-nav"
+                            title="Enlace al perfil de github"></a>
+                </li>
+                <li><a href="https://www.youtube.com/@SebasXP25" target="_blank" rel="noopener noreferrer"><img
+                            src="/assets/images/youtube.svg" loading="lazy" class="icon-nav"
+                            title="Enlace al canal de youtube"></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="left-nav" role="navigation">
+            <a href="https://www.tiktok.com/@sebasxp25" target="_blank" rel="noopener noreferrer"
+                title="Enlace a la cuenta de tiktok" loading="lazy"><span>Tiktok</span></a>
+            <button id="music" aria-label="Reproducir música" title="Reproducir música"></button>
+        </div>
+    </header>
+    <main id="main">
+        <img src="/assets/images/day_farm.png" alt="Imagen de fondo de la granja" id="fondo-granja"
+            title="Imagen de fondo de la granja" loading="lazy">
+        <section id="panel-controles">
+            <label for="selector-semilla">Semilla:</label>
+            <select id="selector-semilla">
+                <option value="trigo">Trigo</option>
+                <option value="zanahoria">Zanahoria</option>
+                <option value="remolacha">Remolacha</option>
+                <option value="patata">Patata</option>
+            </select>
+            <button class="btn-select" id="accion-plantar">Plantar</button>
+            <button class="btn-select" id="accion-regar">Regar</button>
+            <button class="btn-select" id="accion-cosechar">Cosechar</button>
+        </section>
+        <section id="inventario" role="grid" title="Inventario" aria-label="Inventario"></section>
+        <section id="granja" role="grid" title="Granja" aria-label="Granja"></section>
+        <div class="contador-vidas" role="status" title="Contador de vidas" aria-labelledby="Contador de vidas">
+            <p>Tienes <span id="contador-vidas-texto">7</span> vidas.</p>
+            <p>Cada vida significa 2 cultivos, 4 cosechas y 3 riegos.</p>
+        </div>
+        <section class="render-skin" role="region" title="Render Skin" aria-label="Render Skin">
+            <h2>Usuario de Minecraft</h2>
+            <form action="" class="get-skin" id="form-skin">
+                <input type="text" id="input-skin" placeholder="Notch" aria-labelledby="Nombre de usuario de MC"
+                    required title="Nombre de usuario de Minecraft">
+                <button id="btn-gen-skin" class="btn-select" type="submit" value="submit">Generar Skin</button>
+            </form>
+        </section>
+        <canvas></canvas>
+    </main>
+    <footer>
+        <p>Granja Sandbox &copy; 2025 - Todos los derechos reservados</p>
+        <p>Creado por Joel Lertua</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <noscript>
+        <p>Este sitio está optimizado solo para ordenadores.</p>
+    </noscript>
+</body>
+
+</html>

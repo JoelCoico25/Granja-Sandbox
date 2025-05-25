@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------
+    Style's variables
+    Theme
+-------------------------------------------------- */
+
+:root {
+    --text-color: #3a3a3a;
+    --backgorund-color-page: #88c070;
+    --background-color-element: #fff;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: var(--backgorund-color-page);
+    font-size: 1.6rem;
+}
+
+main {
+    position: relative;
+}
+
+main #fondo-granja {
+    width: 100%;
+    height: 80dvh;
+}
+
+/* --------------------------------------------------
+    Header
+    Navigation
+-------------------------------------------------- */
+
+header {
+    background-color: var(--background-color-element);
+    width: 100%;
+    height: 100px;
+    position: relative;
+    /* Note: Changed from relative to fixed */
+}
+
+h1 {
+    color: var(--text-color);
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    height: 80px;
+    padding: 5px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 var(--background-color-element), 4px 4px 0 var(--text-color);
+}
+
+nav {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 290px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list .icon-nav {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.nav-list {
+    list-style: none;
+    width: 270px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 90px;
+    margin-top: 5px;
+    padding: 16px;
+
+}
+
+.left-nav a {
+    text-decoration: none;
+    color: #3a3a3a;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 var(--background-color-element), 4px 4px 0 var(--text-color);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.left-nav #music {
+    background-image: url('../assets/images/music.svg');
+    width: 50px;
+    height: 50px;
+    background-color: var(--background-color-element);
+    cursor: pointer;
+    border: none;
+}
+
+/* --------------------------------------------------
+    Controls' panel => Farm's mechanics
+    Select plant, seed, etc.
+-------------------------------------------------- */
+
+
+#panel-controles {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40dvw;
+    height: 10dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btn-select,
+select {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    padding: 8px;
+    margin: 5px;
+    border: 2px solid #444;
+    background-color: var(--background-color-element);
+    cursor: pointer;
+}
+
+/* --------------------------------------------------
+    Inventory
+-------------------------------------------------- */
+
+#inventario {
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(9, 64px);
+    grid-template-rows: repeat(1, 64px);
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#inventario div {
+    background-color: var(--background-color-element);
+}
+
+
+/* --------------------------------------------------
+    Farm's grid
+-------------------------------------------------- */
+
+#granja {
+    position: absolute;
+    top: 280px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(5, 64px);
+    grid-template-rows: repeat(5, 64px);
+    gap: 2px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.celda {
+    width: 64px;
+    height: 64px;
+    background-color: #a36e3f;
+    /* tierra */
+    background-image: none;
+    background-size: 256px 256px;
+    /* tamaño completo del spritesheet */
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/* --------------------------------------------------
+    Counter Div
+-------------------------------------------------- */
+
+.contador-vidas {
+    position: absolute;
+    width: 20dvw;
+    height: 20dvh;
+    top: 30px;
+    left: 50px;
+    background: var(--background-color-element);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    z-index: 0;
+}
+
+.contador-vidas p {
+    font-size: 1.2rem;
+    margin: 5px;
+    padding: 5px;
+}
+
+.contador-vidas span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ef3a0c;
+}
+
+/* ---------------------------------------------------
+    Footer
+-------------------------------------------------- */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--background-color-element);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: bold;;
+    margin: 5px;
+    padding: 5px;
+}
+
+.skin {
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skin img {
+    transform: scaleX(-1);
+
+}
+
+/* --------------------------------------------------
+    Rendering Skin Minecraft
+-------------------------------------------------- */
+
+.render-skin {
+    position: absolute;
+    bottom: 300px;
+    right: 0;
+    width: 26dvw;
+    height: 16dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.render-skin h2 {
+    position: inherit;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------------------------------
+    Render Skin
+    Get skin from Minecraft API
+    Input and button to render skin
+-------------------------------------------------- */
+
+.get-skin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 32px;
+    width: 50%;
+    height: 60%;
+}
+
+.render-skin input {
+    width: 10dvw;
+    height: 3dvh;
+    font-size: 1.2rem;
+    object-fit: cover;
+}
+
+.render-skin button {
+    width: 10dvw;
+    height: 3dvh;
+    background-color: var(--background-color-element);
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--text-color);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
